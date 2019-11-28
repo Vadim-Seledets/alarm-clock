@@ -10,8 +10,8 @@ entity PWM is
 		CLK: in std_logic;
 		FULL_RESET: in std_logic;
 		RESTART: in std_logic;
-		PERIOD: in std_logic_vector(N - 1 downto 0);  -- PWM Freq  = clock freq/ (PERIOD+1); max value = 2^N-1
-		PULSE: in std_logic_vector(N - 1 downto 0);  -- PWM width = (others=>0)=> OFF; PERIOD => MAX ON 
+		PERIOD: in std_logic_vector(N - 1 downto 0);
+		PULSE: in std_logic_vector(N - 1 downto 0);
 		PWM_SIGNAL: out std_logic
 	);
 end PWM;
