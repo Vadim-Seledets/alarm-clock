@@ -1,0 +1,2 @@
+vhdl work "PWM.vhd"
+vhdl work "PWM_testbench.vhd"
