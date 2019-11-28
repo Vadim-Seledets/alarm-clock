@@ -69,6 +69,8 @@
     <transform xil_pn:end_ts="1574979560" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1574979560">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
@@ -96,6 +98,7 @@
     <transform xil_pn:end_ts="1574979560" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1574979560">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
@@ -111,19 +114,21 @@
     <transform xil_pn:end_ts="1574979564" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4055992042668124270" xil_pn:start_ts="1574979560">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="PWM_testbench_beh.prj"/>
-      <outfile xil_pn:name="PWM_testbench_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
     <transform xil_pn:end_ts="1574979564" xil_pn:in_ck="1645215504297870846" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6754063838631201633" xil_pn:start_ts="1574979564">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="PWM_testbench_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1574976285" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1574976285">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -157,18 +162,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="PWM.lso"/>
-      <outfile xil_pn:name="PWM.ngc"/>
-      <outfile xil_pn:name="PWM.ngr"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="PWM.prj"/>
-      <outfile xil_pn:name="PWM.stx"/>
-      <outfile xil_pn:name="PWM.syr"/>
       <outfile xil_pn:name="PWM.xst"/>
-      <outfile xil_pn:name="PWM_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 
