@@ -35,7 +35,6 @@ xlnx_auto_0_xdb
 *~
 *#
 *.swp
-*.ini
 *.html
 *.vhi
 *.wdb
@@ -45,7 +44,6 @@ xlnx_auto_0_xdb
 *.exe
 *.cmd_log
 *.ncd
-isim
 db
 incremental_db
 work
