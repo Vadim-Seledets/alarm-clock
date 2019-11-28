@@ -1,11 +1,11 @@
 set -tmpdir "xst/projnav.tmp"
 set -xsthdpdir "xst"
 run
--ifn FSMClockUnit.prj
--ofn FSMClockUnit
+-ifn PWM.prj
+-ofn PWM
 -ofmt NGC
 -p xc6slx9-3-tqg144
--top FSMClockUnit
+-top PWM
 -opt_mode Speed
 -opt_level 1
 -power NO

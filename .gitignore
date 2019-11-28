@@ -47,6 +47,7 @@ xlnx_auto_0_xdb
 db
 incremental_db
 work
+isim
 *.cr.mti
 vsim.wlf
 transcript
