@@ -1,0 +1,2 @@
+vhdl work "ROM.vhd"
+vhdl work "ROM_testbench.vhd"
