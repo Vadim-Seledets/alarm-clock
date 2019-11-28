@@ -1,6 +1,9 @@
-set -tmpdir "C:/Users/nikol/Desktop/University/DigitalDesignSoftware/alarm-clock/Source/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/nikol/Desktop/University/DigitalDesignSoftware/alarm-clock/Source/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn FSMClockUnit.prj
+-ofn FSMClockUnit
+-ofmt NGC
 -p xc6slx9-3-tqg144
 -top FSMClockUnit
 -opt_mode Speed
@@ -47,4 +50,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn FSMClockUnit.prj
