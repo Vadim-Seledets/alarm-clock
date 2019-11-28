@@ -44,7 +44,6 @@ xlnx_auto_0_xdb
 *.xreport
 *.exe
 *.cmd_log
-*_beh.prj
 *.ncd
 isim
 db
