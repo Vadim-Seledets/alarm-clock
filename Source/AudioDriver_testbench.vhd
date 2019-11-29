@@ -17,7 +17,7 @@ ARCHITECTURE behavior OF AudioDriver_testbench IS
          PlayEnable : IN  std_logic;
          CLK : IN  std_logic;
          RST : IN  std_logic;
-         MUSIC : OUT  std_logic
+         Audio : OUT  std_logic
         );
     END COMPONENT;
     
@@ -28,7 +28,7 @@ ARCHITECTURE behavior OF AudioDriver_testbench IS
    signal RST : std_logic := '0';
 
  	--Outputs
-   signal MUSIC : std_logic;
+   signal Audio : std_logic;
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -40,7 +40,7 @@ BEGIN
           PlayEnable => PlayEnable,
           CLK => CLK,
           RST => RST,
-          MUSIC => MUSIC
+          Audio => Audio
         );
 
    -- Clock process definitions
@@ -55,9 +55,9 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin
       RST <= '1';
-      wait for 100 ns;	
+      wait for 100 ns;
 		RST <= '0';
       wait for CLK_period*10;
 

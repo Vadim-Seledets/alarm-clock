@@ -65,17 +65,17 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1575023462" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575023462">
+    <transform xil_pn:end_ts="1575029923" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575029923">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575024171" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575024171">
+    <transform xil_pn:end_ts="1575030148" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575030148">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
@@ -97,19 +97,19 @@
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1575023462" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-962184331941924237" xil_pn:start_ts="1575023462">
+    <transform xil_pn:end_ts="1575029923" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-962184331941924237" xil_pn:start_ts="1575029923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575023462" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5954037678236660495" xil_pn:start_ts="1575023462">
+    <transform xil_pn:end_ts="1575029923" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5954037678236660495" xil_pn:start_ts="1575029923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575023462" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3081484687639469905" xil_pn:start_ts="1575023462">
+    <transform xil_pn:end_ts="1575029923" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3081484687639469905" xil_pn:start_ts="1575029923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575024171" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575024171">
+    <transform xil_pn:end_ts="1575030148" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575030148">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
@@ -131,29 +131,24 @@
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1575024176" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-192290728525755418" xil_pn:start_ts="1575024171">
+    <transform xil_pn:end_ts="1575030153" xil_pn:in_ck="1391926986157475094" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-192290728525755418" xil_pn:start_ts="1575030148">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AudioDriver_testbench_beh.prj"/>
       <outfile xil_pn:name="AudioDriver_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575024176" xil_pn:in_ck="-5128807805002270602" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3114829203131899315" xil_pn:start_ts="1575024176">
+    <transform xil_pn:end_ts="1575030154" xil_pn:in_ck="-5128807805002270602" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3114829203131899315" xil_pn:start_ts="1575030153">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AudioDriver_testbench_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1575009833" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1575009833">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1575021694" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="8603434400940883711" xil_pn:start_ts="1575021694">
       <status xil_pn:value="SuccessfullyRun"/>

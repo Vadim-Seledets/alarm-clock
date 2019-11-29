@@ -18,7 +18,7 @@ entity AudioDriver is
 		PlayEnable: in std_logic;
 		CLK: in std_logic;
 		RST: in std_logic;
-		MUSIC: out std_logic
+		Audio: out std_logic
 	);
 end AudioDriver;
 
@@ -83,7 +83,7 @@ begin
 		RESTART => RST,
 		WIDTH => conv_std_logic_vector(PWM_WIDTH, 8),
 		PULSE => s_data,
-		PWM_SIGNAL => MUSIC
+		PWM_SIGNAL => Audio
 	);
 	
 	ChangeSineValue: process(RST, s_signal_clk)
