@@ -7,34 +7,36 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY PWM_testbench IS
-END PWM_testbench;
+ENTITY ToneGenerator_testbench IS
+END ToneGenerator_testbench;
  
-ARCHITECTURE behavior OF PWM_testbench IS 
+ARCHITECTURE behavior OF ToneGenerator_testbench IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT PWM
+    COMPONENT ToneGenerator
     PORT(
+         Tone: in integer range 0 to 255;
+			Duration: in integer;
+			Enable : IN std_logic;
          CLK : IN  std_logic;
-         FULL_RESET : IN  std_logic;
-         RESTART : IN  std_logic;
-         WIDTH : IN  std_logic_vector(7 downto 0);
-         PULSE : IN  std_logic_vector(7 downto 0);
-         PWM_SIGNAL : OUT  std_logic
+         RST : IN  std_logic;
+         Finished : OUT  std_logic;
+         Audio : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
+   signal Tone: integer range 0 to 255 := 0;
+	signal Duration: integer := 0;
+	signal Enable : std_logic := '0';
    signal CLK : std_logic := '0';
-   signal FULL_RESET : std_logic := '0';
-   signal RESTART : std_logic := '0';
-   signal WIDTH : std_logic_vector(7 downto 0) := (others => '0');
-   signal PULSE : std_logic_vector(7 downto 0) := (others => '0');
+   signal RST : std_logic := '0';
 
  	--Outputs
-   signal PWM_SIGNAL : std_logic;
+   signal Finished : std_logic;
+   signal Audio : std_logic;
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -42,13 +44,14 @@ ARCHITECTURE behavior OF PWM_testbench IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: PWM PORT MAP (
+   uut: ToneGenerator PORT MAP (
+          Tone => Tone,
+          Duration => Duration, --ms
+			 Enable => Enable,
           CLK => CLK,
-          FULL_RESET => FULL_RESET,
-          RESTART => RESTART,
-          WIDTH => WIDTH,
-          PULSE => PULSE,
-          PWM_SIGNAL => PWM_SIGNAL
+          RST => RST,
+          Finished => Finished,
+          Audio => Audio
         );
 
    -- Clock process definitions
@@ -64,14 +67,18 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      FULL_RESET <= '1';
+      RST <= '1';
       wait for 100 ns;	
-		FULL_RESET <= '0';
+		RST <= '0';
       wait for CLK_period*10;
 
-      WIDTH <= conv_std_logic_vector(100, 8);
-		PULSE <= conv_std_logic_vector(20, 8);
-
+      Tone <= 74;
+		Duration <= 3;
+		Enable <= '1';
+		
+		Tone <= 200;
+		Duration <= 6;
+		
       wait;
    end process;
 

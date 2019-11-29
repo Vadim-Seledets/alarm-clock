@@ -1,0 +1,2 @@
+vhdl work "ClockDivider.vhd"
+vhdl work "FREQ_DIVIDER_testbench.vhd"

@@ -7,34 +7,28 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY PWM_testbench IS
-END PWM_testbench;
+ENTITY FDIV_tb IS
+END FDIV_tb;
  
-ARCHITECTURE behavior OF PWM_testbench IS 
+ARCHITECTURE behavior OF FDIV_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT PWM
+    COMPONENT FDIV
     PORT(
+         Threshold : IN  std_logic_vector(31 downto 0);
          CLK : IN  std_logic;
-         FULL_RESET : IN  std_logic;
-         RESTART : IN  std_logic;
-         WIDTH : IN  std_logic_vector(7 downto 0);
-         PULSE : IN  std_logic_vector(7 downto 0);
-         PWM_SIGNAL : OUT  std_logic
+         DividedCLK : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
+   signal Threshold : std_logic_vector(31 downto 0) := (others => '0');
    signal CLK : std_logic := '0';
-   signal FULL_RESET : std_logic := '0';
-   signal RESTART : std_logic := '0';
-   signal WIDTH : std_logic_vector(7 downto 0) := (others => '0');
-   signal PULSE : std_logic_vector(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal PWM_SIGNAL : std_logic;
+   signal DividedCLK : std_logic;
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -42,13 +36,10 @@ ARCHITECTURE behavior OF PWM_testbench IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: PWM PORT MAP (
+   uut: FDIV PORT MAP (
+          Threshold => Threshold,
           CLK => CLK,
-          FULL_RESET => FULL_RESET,
-          RESTART => RESTART,
-          WIDTH => WIDTH,
-          PULSE => PULSE,
-          PWM_SIGNAL => PWM_SIGNAL
+          DividedCLK => DividedCLK
         );
 
    -- Clock process definitions
@@ -59,18 +50,23 @@ BEGIN
 		CLK <= '1';
 		wait for CLK_period/2;
    end process;
- 
 
    -- Stimulus process
    stim_proc: process
    begin		
-      FULL_RESET <= '1';
+      -- hold reset state for 100 ns.
       wait for 100 ns;	
-		FULL_RESET <= '0';
+
       wait for CLK_period*10;
 
-      WIDTH <= conv_std_logic_vector(100, 8);
-		PULSE <= conv_std_logic_vector(20, 8);
+      Threshold <= conv_std_logic_vector(5, 32);
+		wait for 5 ms;
+		
+		Threshold <= conv_std_logic_vector(10, 32);
+		wait for 5 ms;
+		
+		Threshold <= conv_std_logic_vector(15, 32);
+		wait for 5 ms;
 
       wait;
    end process;

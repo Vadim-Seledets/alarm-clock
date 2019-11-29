@@ -1,0 +1,2 @@
+vhdl isim_temp "FDIV.vhd"
+vhdl isim_temp "FREQ_DIVIDER_testbench.vhd"

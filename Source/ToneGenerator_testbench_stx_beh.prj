@@ -1,0 +1,5 @@
+vhdl isim_temp "ROM.vhd"
+vhdl isim_temp "PWM.vhd"
+vhdl isim_temp "FDIV.vhd"
+vhdl isim_temp "ToneGenerator.vhd"
+vhdl isim_temp "ToneGenerator_testbench.vhd"

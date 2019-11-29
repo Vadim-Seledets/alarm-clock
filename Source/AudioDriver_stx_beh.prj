@@ -1,0 +1,4 @@
+vhdl isim_temp "ROM.vhd"
+vhdl isim_temp "PWM.vhd"
+vhdl isim_temp "FDIV.vhd"
+vhdl isim_temp "AudioDriver.vhd"
