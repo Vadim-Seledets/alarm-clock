@@ -22,8 +22,38 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Clock.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="AlarmController.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="AlarmController.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="AlarmController.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="AlarmController.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="AlarmController.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="AlarmController.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="AlarmController.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="AlarmController.xst"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="AlarmController_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="BCDToSevSegDecoder_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ClockFSM_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="ClockController.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="ClockController.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ClockController.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="ClockController.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ClockController.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="ClockController.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="ClockController.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="ClockController.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ClockController_Tests_isim_beh.exe"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ClockController_Tests_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ClockController_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="ClockController_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="ClockFSM.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="ClockFSM.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ClockFSM.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="ClockFSM.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ClockFSM.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="ClockFSM.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="ClockFSM.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="ClockFSM.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ClockFSM_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="ClockFSM_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Clock_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FDIV_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="FSMClockUnit.cmd_log"/>
@@ -34,6 +64,12 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="FSMClockUnit.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="FSMClockUnit.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="FSMClockUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSMClockUnit_Tests_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FSMClockUnit_Tests_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="FSMClockUnit_Tests_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSMClockUnit_Tests_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_envsettings.html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FSMClockUnit_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="FSMClockUnit_xst.xrpt"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="PWM.cmd_log"/>
@@ -45,7 +81,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="PWM.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="PWM.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="PWM_summary.html"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PWM_testbench_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PWM_testbench_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="PWM_testbench_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="PWM_xst.xrpt"/>
@@ -66,108 +101,126 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574979560" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1574979560">
+    <transform xil_pn:end_ts="1574993293" xil_pn:in_ck="-7868701239770935208" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1574993293">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
+      <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
+      <outfile xil_pn:name="ClockController.vhd"/>
+      <outfile xil_pn:name="ClockController_Tests.vhd"/>
       <outfile xil_pn:name="ClockFSM.vhd"/>
       <outfile xil_pn:name="FDIV.vhd"/>
       <outfile xil_pn:name="FSMClockUnit.vhd"/>
+      <outfile xil_pn:name="FSMClockUnit_Tests.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
       <outfile xil_pn:name="PWM_testbench.vhd"/>
       <outfile xil_pn:name="ROM.vhd"/>
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1574979366" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1342162052172032745" xil_pn:start_ts="1574979366">
+    <transform xil_pn:end_ts="1574993314" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7065497014772538630" xil_pn:start_ts="1574993314">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574979366" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1349541352246423911" xil_pn:start_ts="1574979366">
+    <transform xil_pn:end_ts="1574993314" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5212595389490686840" xil_pn:start_ts="1574993314">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574979289" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3633805967674587749" xil_pn:start_ts="1574979289">
+    <transform xil_pn:end_ts="1574992128" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5234264236086292931" xil_pn:start_ts="1574992128">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574979560" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1574979560">
+    <transform xil_pn:end_ts="1574993293" xil_pn:in_ck="-7868701239770935208" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1574993293">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
+      <outfile xil_pn:name="ClockController.vhd"/>
+      <outfile xil_pn:name="ClockController_Tests.vhd"/>
       <outfile xil_pn:name="ClockFSM.vhd"/>
       <outfile xil_pn:name="FDIV.vhd"/>
       <outfile xil_pn:name="FSMClockUnit.vhd"/>
+      <outfile xil_pn:name="FSMClockUnit_Tests.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
       <outfile xil_pn:name="PWM_testbench.vhd"/>
       <outfile xil_pn:name="ROM.vhd"/>
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1574979564" xil_pn:in_ck="-5608055006002193327" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4055992042668124270" xil_pn:start_ts="1574979560">
+    <transform xil_pn:end_ts="1574993317" xil_pn:in_ck="-7868701239770935208" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2034680475614155948" xil_pn:start_ts="1574993314">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputRemoved"/>
-      <outfile xil_pn:name="PWM_testbench_beh.prj"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="FSMClockUnit_Tests_beh.prj"/>
+      <outfile xil_pn:name="FSMClockUnit_Tests_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1574979564" xil_pn:in_ck="1645215504297870846" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6754063838631201633" xil_pn:start_ts="1574979564">
+    <transform xil_pn:end_ts="1574993318" xil_pn:in_ck="9093184584593092164" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-9176337596369521375" xil_pn:start_ts="1574993317">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="FSMClockUnit_Tests_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1574976285" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1574976285">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="4639531650219344757" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-299091004661501197" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3633805967674587749" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5234264236086292931" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7419945926407342007" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-7467313651280174731" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745955965653" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745955965653" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978267" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-5562136259371220625" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574991959" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-210006265677380595" xil_pn:start_ts="1574991959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1574978277" xil_pn:in_ck="3130883133956362065" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-8984518232331159042" xil_pn:start_ts="1574978267">
+    <transform xil_pn:end_ts="1574992054" xil_pn:in_ck="-3178962544542107150" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="3925180339276214492" xil_pn:start_ts="1574992046">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
-      <outfile xil_pn:name="PWM.prj"/>
-      <outfile xil_pn:name="PWM.xst"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="AlarmController.ngr"/>
+      <outfile xil_pn:name="ClockController.ngr"/>
+      <outfile xil_pn:name="FSMClockUnit.lso"/>
+      <outfile xil_pn:name="FSMClockUnit.ngc"/>
+      <outfile xil_pn:name="FSMClockUnit.ngr"/>
+      <outfile xil_pn:name="FSMClockUnit.prj"/>
+      <outfile xil_pn:name="FSMClockUnit.stx"/>
+      <outfile xil_pn:name="FSMClockUnit.syr"/>
+      <outfile xil_pn:name="FSMClockUnit.xst"/>
+      <outfile xil_pn:name="FSMClockUnit_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 

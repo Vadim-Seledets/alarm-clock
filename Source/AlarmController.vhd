@@ -12,13 +12,18 @@ entity AlarmController is
 end AlarmController;
 
 architecture Behavioral of AlarmController is
-	signal Alarm: std_logic := '0';
+	signal SetedTime: std_logic := '0';
+	signal TAlarm: std_logic := '0';
 	signal SavedAlarmTime: std_logic_vector(23 downto 0) := (others => '0');
 begin
-	SetAlarm: process (CurrentTime)
+	SetAlarm: process (CurrentTime, AlarmReset)
 	begin
-		if CurrentTime = SavedAlarmTime then
-			Alarm <= '1';
+		if AlarmReset = '1' then
+			TAlarm <= '0';
+		else
+			if SetedTime = '1' and CurrentTime = SavedAlarmTime then
+				TAlarm <= '1';
+			end if;
 		end if;
 	end process;
 
@@ -26,14 +31,10 @@ begin
 	begin
 		if rising_edge(SetTime) then
 			SavedAlarmTime <= AlarmTime;
+			SetedTime <= '1';
 		end if;
 	end process;
 	
-	ResetAlarm: process (AlarmReset)
-	begin
-		if rising_edge(AlarmReset) then
-			Alarm <= '0';
-		end if;
-	end process;
+	Alarm <= TAlarm;
 end Behavioral;
 
