@@ -89,35 +89,20 @@
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="FSMClockUnit_Tests_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSMClockUnit_Tests_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_envsettings.html"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FSMClockUnit_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="FSMClockUnit_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="PWM.cmd_log"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="PWM.lso"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="PWM.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="PWM.ngr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PWM.prj"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="PWM.stx"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="PWM.syr"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="PWM.xst"/>
-    <file xil_pn:fileType="FILE_HTML" xil_pn:name="PWM_summary.html"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PWM_testbench_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="PWM_testbench_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="PWM_xst.xrpt"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ROM_testbench_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SevSegDriver_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1574802059" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1574802059">
+    <transform xil_pn:end_ts="1575029923" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1575029923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -130,7 +115,10 @@
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
+      <outfile xil_pn:name="AudioDriver_testbench.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
+      <outfile xil_pn:name="BinToHexadecimalConverter.vhd"/>
+      <outfile xil_pn:name="BinToHexadecimalConverter_testbench.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
       <outfile xil_pn:name="ClockController.vhd"/>
       <outfile xil_pn:name="ClockController_Tests.vhd"/>
@@ -170,7 +158,10 @@
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
+      <outfile xil_pn:name="AudioDriver_testbench.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
+      <outfile xil_pn:name="BinToHexadecimalConverter.vhd"/>
+      <outfile xil_pn:name="BinToHexadecimalConverter_testbench.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
       <outfile xil_pn:name="ClockController.vhd"/>
       <outfile xil_pn:name="ClockController_Tests.vhd"/>
@@ -199,7 +190,6 @@
       <outfile xil_pn:name="DTHByte_Tests_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
     <transform xil_pn:end_ts="1575040202" xil_pn:in_ck="7540990128739277433" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-9142453444771878779" xil_pn:start_ts="1575040202">
@@ -210,9 +200,8 @@
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="DTHByte_Tests_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
     </transform>
-    <transform xil_pn:end_ts="1574976285" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1574976285">
+    <transform xil_pn:end_ts="1575009833" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1575009833">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>

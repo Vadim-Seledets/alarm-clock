@@ -10,37 +10,37 @@ entity PWM is
 		CLK: in std_logic;
 		FULL_RESET: in std_logic;
 		RESTART: in std_logic;
-		PERIOD: in std_logic_vector(N - 1 downto 0);  -- PWM Freq  = clock freq/ (PERIOD+1); max value = 2^N-1
-		PULSE: in std_logic_vector(N - 1 downto 0);  -- PWM width = (others=>0)=> OFF; PERIOD => MAX ON 
+		WIDTH: in std_logic_vector(N - 1 downto 0);
+		PULSE: in std_logic_vector(N - 1 downto 0);
 		PWM_SIGNAL: out std_logic
 	);
 end PWM;
 
 architecture Behavioral of PWM is
 
-signal s_period: unsigned(N - 1 downto 0);
+signal s_width: unsigned(N - 1 downto 0);
 signal s_pwm_counter: unsigned(N - 1 downto 0);
 signal s_pulse: unsigned(N - 1 downto 0);
 signal s_change_state: std_logic;
 
 begin
-	s_change_state <= '0' when s_pwm_counter < s_period else '1';  -- use to strobe new word
+	s_change_state <= '0' when s_pwm_counter < s_width else '1';  -- use to strobe new word
 
 	p_state_out : process(CLK, FULL_RESET)
 	begin
 		if (FULL_RESET = '1') then
-			s_period <= (others => '0');
+			s_width <= (others => '0');
 			s_pulse <= (others => '0');
 			s_pwm_counter <= (others => '0');
 			PWM_SIGNAL <= '0';
 		elsif (rising_edge(CLK)) then
-			s_period <= unsigned(PERIOD);
+			s_width <= unsigned(WIDTH);
 			if (RESTART = '1') then
 				s_pulse <= unsigned(PULSE);
 				s_pwm_counter <= to_unsigned(0, N);
 				PWM_SIGNAL <= '0';
 			else
-				if (s_pwm_counter = 0) and (s_pulse /= s_period) then
+				if (s_pwm_counter = 0) and (s_pulse /= s_width) then
 					PWM_SIGNAL <= '0';
 				elsif (s_pwm_counter <= s_pulse) then
 					PWM_SIGNAL <= '1';
@@ -52,7 +52,7 @@ begin
 					s_pulse <= unsigned(PULSE);
 				end if;
       
-				if (s_pwm_counter = s_period) then
+				if (s_pwm_counter = s_width) then
 					s_pwm_counter <= to_unsigned(0, N);
 				else
 					s_pwm_counter <= s_pwm_counter + 1;
