@@ -1,15 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity FSMClockUnit is
 	Port (
 		CLK: in std_logic;
@@ -43,34 +34,23 @@ architecture Behavioral of FSMClockUnit is
 		);
 	end component;
 	
-	signal SetTimeClock: std_logic := 0;
-	signal SetTimeAlarm: std_logic := 0;
+	signal SetTimeClock: std_logic := '0';
+	signal SetTimeAlarm: std_logic := '0';
 	
 	signal SavedCurrentTime: std_logic_vector (23 downto 0);
 begin
 
-	SetTime: process (SetTime)
-	begin
-		if SetTime = '1' then
-			if TargetToSet = '0' then
-				SetTimeClock <= '1';
-			else
-				SetTimeAlarm <= '1';
-			end if;
-		else
-			SetTimeClock <= '0';
-			SetTimeAlarm <= '0';
-		end if;
-	end process;
+	SetTimeAlarm <= SetTime and TargetToSet;
+	SetTimeClock <= SetTime and not TargetToSet;
 	
-	ClockController: ClockController port map (
+	ClockControllerC: ClockController port map (
 		CLK => CLK,
 		TimeIn => TimeIn,
 		SetTime => SetTimeClock,
 		CurrentTime => SavedCurrentTime
 	);
 	
-	AlarmController: AlarmController port map (
+	AlarmControllerC: AlarmController port map (
 		CurrentTime => SavedCurrentTime,
 		AlarmTime => TimeIn,
 		SetTime => SetTimeAlarm,
