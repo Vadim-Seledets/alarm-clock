@@ -15,7 +15,7 @@ use IEEE.MATH_REAL.ALL;
 
 entity ToneGenerator is
 	port (
-		Tone: in integer range 0 to 255;
+		Tone: in integer;
 		Duration: in integer;
 		Enable: in std_logic;
 		CLK: in std_logic;
@@ -124,7 +124,7 @@ begin
 			s_finished <= '0';
 			s_duration_count <= (others => '0');
 		elsif rising_edge(s_duration_clk) then
-			if s_duration_count < Duration then
+			if s_duration_count <= Duration then
 				s_duration_count <= s_duration_count + 1;
 			else
 				s_finished <= '1';
