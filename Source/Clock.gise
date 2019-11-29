@@ -63,7 +63,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="DTHByte.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="DTHByte.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="DTHByte.xst"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DTHByte_Tests_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="DTHByte_Tests_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="DTHByte_Tests_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DTHByte_xst.xrpt"/>
@@ -75,6 +74,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="DecToHexadecimal.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="DecToHexadecimal.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="DecToHexadecimal.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="DecToHexadecimal_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DecToHexadecimal_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FDIV_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="FSMClockUnit.cmd_log"/>
@@ -91,11 +91,15 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="FSMClockUnit_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="FSMClockUnit_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="InputDriver_Tests_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="InputDriver_Tests_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="InputDriver_Tests_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="PWM.ngr"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
@@ -106,19 +110,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575040199" xil_pn:in_ck="185075925501707398" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575040199">
+    <transform xil_pn:end_ts="1575061051" xil_pn:in_ck="-6888856634050578800" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575061051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
-      <outfile xil_pn:name="AudioDriver_testbench.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
-      <outfile xil_pn:name="BinToHexadecimalConverter.vhd"/>
-      <outfile xil_pn:name="BinToHexadecimalConverter_testbench.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
       <outfile xil_pn:name="ClockController.vhd"/>
       <outfile xil_pn:name="ClockController_Tests.vhd"/>
@@ -129,39 +126,32 @@
       <outfile xil_pn:name="FDIV.vhd"/>
       <outfile xil_pn:name="FSMClockUnit.vhd"/>
       <outfile xil_pn:name="FSMClockUnit_Tests.vhd"/>
+      <outfile xil_pn:name="InputDriver.vhd"/>
+      <outfile xil_pn:name="InputDriver_Tests.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
       <outfile xil_pn:name="PWM_testbench.vhd"/>
       <outfile xil_pn:name="ROM.vhd"/>
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1575038902" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="72024944142561628" xil_pn:start_ts="1575038902">
+    <transform xil_pn:end_ts="1575061051" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7091397548296049852" xil_pn:start_ts="1575061051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575038902" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7776580702868193830" xil_pn:start_ts="1575038902">
+    <transform xil_pn:end_ts="1575061051" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4861167598518159298" xil_pn:start_ts="1575061051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575040199" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1637229455759150485" xil_pn:start_ts="1575040199">
+    <transform xil_pn:end_ts="1575041816" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3081484687639469905" xil_pn:start_ts="1575041816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1575040199" xil_pn:in_ck="185075925501707398" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575040199">
+    <transform xil_pn:end_ts="1575061051" xil_pn:in_ck="-6888856634050578800" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575061051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="AlarmController.vhd"/>
       <outfile xil_pn:name="AudioDriver.vhd"/>
-      <outfile xil_pn:name="AudioDriver_testbench.vhd"/>
       <outfile xil_pn:name="BCDToSevSegDecoder.vhd"/>
-      <outfile xil_pn:name="BinToHexadecimalConverter.vhd"/>
-      <outfile xil_pn:name="BinToHexadecimalConverter_testbench.vhd"/>
       <outfile xil_pn:name="Clock.vhd"/>
       <outfile xil_pn:name="ClockController.vhd"/>
       <outfile xil_pn:name="ClockController_Tests.vhd"/>
@@ -172,34 +162,34 @@
       <outfile xil_pn:name="FDIV.vhd"/>
       <outfile xil_pn:name="FSMClockUnit.vhd"/>
       <outfile xil_pn:name="FSMClockUnit_Tests.vhd"/>
+      <outfile xil_pn:name="InputDriver.vhd"/>
+      <outfile xil_pn:name="InputDriver_Tests.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
       <outfile xil_pn:name="PWM_testbench.vhd"/>
       <outfile xil_pn:name="ROM.vhd"/>
       <outfile xil_pn:name="ROM_testbench.vhd"/>
       <outfile xil_pn:name="SevSegDriver.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1575040202" xil_pn:in_ck="185075925501707398" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-223767983496177320" xil_pn:start_ts="1575040199">
+    <transform xil_pn:end_ts="1575061055" xil_pn:in_ck="-6888856634050578800" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1533281343011212504" xil_pn:start_ts="1575061051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="DTHByte_Tests_beh.prj"/>
-      <outfile xil_pn:name="DTHByte_Tests_isim_beh.exe"/>
+      <outfile xil_pn:name="InputDriver_Tests_beh.prj"/>
+      <outfile xil_pn:name="InputDriver_Tests_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1575040202" xil_pn:in_ck="7540990128739277433" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-9142453444771878779" xil_pn:start_ts="1575040202">
+    <transform xil_pn:end_ts="1575061055" xil_pn:in_ck="8497436085981420869" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7859012765181145301" xil_pn:start_ts="1575061055">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="DTHByte_Tests_isim_beh.wdb"/>
+      <outfile xil_pn:name="InputDriver_Tests_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1575009833" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1575009833">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -233,18 +223,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="DTHByte.lso"/>
-      <outfile xil_pn:name="DTHByte.ngc"/>
-      <outfile xil_pn:name="DTHByte.ngr"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="DTHByte.prj"/>
-      <outfile xil_pn:name="DTHByte.stx"/>
-      <outfile xil_pn:name="DTHByte.syr"/>
       <outfile xil_pn:name="DTHByte.xst"/>
-      <outfile xil_pn:name="DTHByte_Tests_beh.prj"/>
-      <outfile xil_pn:name="DTHByte_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 
