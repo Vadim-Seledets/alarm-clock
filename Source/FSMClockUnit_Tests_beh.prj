@@ -1,4 +1,0 @@
-vhdl work "ClockController.vhd"
-vhdl work "AlarmController.vhd"
-vhdl work "FSMClockUnit.vhd"
-vhdl work "FSMClockUnit_Tests.vhd"
