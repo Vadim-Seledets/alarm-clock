@@ -11,6 +11,7 @@ entity AlarmClock is
 		TargetToSetTime: in std_logic; -- Switch -- 0 - to Timer; 1 - to Alarm
 		EditEnable: in std_logic; -- Switch
 		Audio: out std_logic;
+		AlarmLed: out std_logic;
 		DisplayData: out std_logic_vector(6 downto 0);
 		DisplayControl: out std_logic_vector(5 downto 0)
 	);
@@ -28,6 +29,7 @@ architecture Behavioral of AlarmClock is
 	component InputDriver is
 		port(
 			Enable : in std_logic;
+			CLK : in std_logic;
 			
 			Up : in std_logic;
 			Down : in std_logic;
@@ -77,9 +79,11 @@ architecture Behavioral of AlarmClock is
 	end component;
 	
 	constant REAL_TIME_CLOCK_THREASHOLD: std_logic_vector(31 downto 0) := conv_std_logic_vector(100000000, 32);
+	constant INPUT_CLOCK_THREASHOLD: std_logic_vector(31 downto 0) := conv_std_logic_vector(10000000, 32);
 	constant SEVEN_SEGMENT_DISPLAY_CLOCK_THREASHOLD: std_logic_vector(31 downto 0) := conv_std_logic_vector(25000, 32);
 	
 	-- Clocks
+	signal InputClock : std_logic;
 	signal RealTimeClock : std_logic;
 	signal SevenSegmentDisplayClock : std_logic;
 	
@@ -98,12 +102,20 @@ begin
 	CurrentTime <= CurrentClockTime when TargetToSetTime = '0' else CurrentAlarmTime;
 	CurrentAlarmTime <= TimeToSet when EditEnable = '1' and TargetToSetTime = '1' else CurrentAlarmTime;
 	TempDisplayData <= CurrentClockTime when EditEnable = '0' or TargetToSetTime = '0' else CurrentAlarmTime;
+	AlarmLed <= Alarm;
 	
 	REAL_TIME_CLOCK_DIVIDER: FDIV
 		port map (
 			Threshold => REAL_TIME_CLOCK_THREASHOLD, 
 			CLK => CLK, 
 			DividedCLK => RealTimeClock
+		);
+	
+	INPUT_CLOCK_DIVIDER: FDIV
+		port map (
+			Threshold => INPUT_CLOCK_THREASHOLD, 
+			CLK => CLK, 
+			DividedCLK => InputClock
 		);
 
 	SEVEN_SEGMENT_DISPLAY_CLOCK_DIVIDER: FDIV
@@ -115,7 +127,8 @@ begin
 
 	INPUT_DRIVER: InputDriver
 		port map (
-			Enable => EditEnable, 
+			Enable => EditEnable,
+			CLK => InputClock,
 			Up => Up, 
 			Down => Down, 
 			Left => Left, 
@@ -151,9 +164,9 @@ begin
 		
 	AUDIO_DRIVER: AudioDriver
 		port map (
-			CLK => CLK, 
-			PlayEnable => Alarm, 
-			RST => Reset, 
+			CLK => CLK,
+			PlayEnable => Alarm,
+			RST => Reset,
 			Audio => Audio
 		);
 	
