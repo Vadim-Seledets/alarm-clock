@@ -4,15 +4,6 @@ use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.MATH_REAL.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity AudioDriver is
 	port (
 		PlayEnable: in std_logic;
@@ -23,14 +14,6 @@ entity AudioDriver is
 end AudioDriver;
 
 architecture Behavioral of AudioDriver is
-
-	component FDIV is
-		port (
-			Threshold: in std_logic_vector(31 downto 0);
-			CLK: in std_logic;
-			DividedCLK: out std_logic
-		);
-	end component;
 	
 	component ROM_Melody is
 		generic (
