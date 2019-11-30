@@ -37,4 +37,3 @@ begin
 	
 	Alarm <= TAlarm;
 end Behavioral;
-
