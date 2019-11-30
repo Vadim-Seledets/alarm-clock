@@ -77,13 +77,17 @@ architecture Behavioral of AlarmClock is
 	end component;
 	
 	constant REAL_TIME_CLOCK_THREASHOLD: std_logic_vector(31 downto 0) := conv_std_logic_vector(100000000, 32);
+	constant SEVEN_SEGMENT_DISPLAY_CLOCK_THREASHOLD: std_logic_vector(31 downto 0) := conv_std_logic_vector(25000, 32);
+	
+	-- Clocks
+	signal RealTimeClock : std_logic;
+	signal SevenSegmentDisplayClock : std_logic;
 	
 	-- Stored value
 	signal CurrentAlarmTime : std_logic_vector(23 downto 0);
 	signal CurrentClockTime : std_logic_vector(23 downto 0);
 	
 	-- Temp value
-	signal RealTimeClock : std_logic;
 	signal Alarm : std_logic;
 	signal CurrentTime : std_logic_vector(23 downto 0);
 	signal TempDisplayData : std_logic_vector(23 downto 0);
@@ -92,9 +96,7 @@ architecture Behavioral of AlarmClock is
 	
 begin
 	CurrentTime <= CurrentClockTime when TargetToSetTime = '0' else CurrentAlarmTime;
-	
 	CurrentAlarmTime <= TimeToSet when EditEnable = '1' and TargetToSetTime = '1' else CurrentAlarmTime;
-	
 	TempDisplayData <= CurrentClockTime when EditEnable = '0' or TargetToSetTime = '0' else CurrentAlarmTime;
 	
 	REAL_TIME_CLOCK_DIVIDER: FDIV
@@ -102,8 +104,15 @@ begin
 			Threshold => REAL_TIME_CLOCK_THREASHOLD, 
 			CLK => CLK, 
 			DividedCLK => RealTimeClock
-		);		
-		
+		);
+
+	SEVEN_SEGMENT_DISPLAY_CLOCK_DIVIDER: FDIV
+		port map (
+			Threshold => SEVEN_SEGMENT_DISPLAY_CLOCK_THREASHOLD, 
+			CLK => CLK, 
+			DividedCLK => SevenSegmentDisplayClock
+		);
+
 	INPUT_DRIVER: InputDriver
 		port map (
 			Enable => EditEnable, 
@@ -130,15 +139,15 @@ begin
 		port map (
 			Dec => TempDisplayData, 
 			Hexadecimal => Hexadecimal
-		);	
+		);
 	
 	SEVEN_SEGMENT_DISPLAY: SevenSegmentDisplay
 		port map (
-			CLK => CLK, 
+			CLK => SevenSegmentDisplayClock, 
 			Data => Hexadecimal, 
 			DecodedData => DisplayData, 
 			Control => DisplayControl
-		);	
+		);
 		
 	AUDIO_DRIVER: AudioDriver
 		port map (
