@@ -1,7 +1,0 @@
-vhdl work "ROM.vhd"
-vhdl work "PWM.vhd"
-vhdl work "FDIV.vhd"
-vhdl work "ToneGenerator.vhd"
-vhdl work "ROM_Melody.vhd"
-vhdl work "AudioDriver.vhd"
-vhdl work "AudioDriver_testbench.vhd"

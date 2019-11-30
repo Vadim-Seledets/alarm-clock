@@ -1,2 +1,0 @@
-vhdl isim_temp "ClockController.vhd"
-vhdl isim_temp "ClockController_Tests.vhd"
