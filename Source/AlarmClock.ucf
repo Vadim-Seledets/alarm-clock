@@ -1,6 +1,8 @@
 # PlanAhead Generated IO constraints 
 # -- Inputs
 
+NET "EditEnable" CLOCK_DEDICATED_ROUTE = FALSE;
+
 # CLK
 NET "CLK" IOSTANDARD = LVCMOS18;
 
@@ -14,6 +16,9 @@ NET "Right" IOSTANDARD = LVCMOS18;
 NET "Reset" IOSTANDARD = LVCMOS18;
 NET "TargetToSetTime" IOSTANDARD = LVCMOS18;
 NET "EditEnable" IOSTANDARD = LVCMOS18;
+
+# Leds
+NET "AlarmLed" IOSTANDARD = LVCMOS18;
 
 # -- Outputs
 
@@ -45,34 +50,37 @@ NET "DisplayData[0]" IOSTANDARD = LVCMOS18;
 NET "CLK" LOC = E3;
 
 # Buttons
-NET "Up" LOC = M18;
-NET "Down" LOC = P18;
-NET "Left" LOC = P17;
-NET "Right" LOC = M17;
+NET "Up" LOC = F15;
+NET "Down" LOC = V10;
+NET "Left" LOC = T16;
+NET "Right" LOC = R10;
 
 # Switch
-NET "Reset" LOC = N17;
-NET "TargetToSetTime" LOC = J15;
-NET "EditEnable" LOC = L16;
+NET "Reset" LOC = E16;
+NET "TargetToSetTime" LOC = U9;
+NET "EditEnable" LOC = U8;
 
 # -- Outputs
 
 # Audio
-NET "Audio" LOC = J8;
+NET "Audio" LOC = A11;
+
+# Leds
+NET "AlarmLed" LOC = P2;
 
 # DisplayControl
-NET "DisplayControl[5]" LOC = U13;
-NET "DisplayControl[4]" LOC = K2;
-NET "DisplayControl[3]" LOC = T14;
-NET "DisplayControl[2]" LOC = P14;
-NET "DisplayControl[1]" LOC = J14;
-NET "DisplayControl[0]" LOC = T9;
+NET "DisplayControl[5]" LOC = M1;
+NET "DisplayControl[4]" LOC = L1;
+NET "DisplayControl[3]" LOC = N4;
+NET "DisplayControl[2]" LOC = N2;
+NET "DisplayControl[1]" LOC = N5;
+NET "DisplayControl[0]" LOC = M3;
 
 # DisplayData
-NET "DisplayData[6]" LOC = T10;
-NET "DisplayData[5]" LOC = R10;
-NET "DisplayData[4]" LOC = K16;
-NET "DisplayData[3]" LOC = K13;
-NET "DisplayData[2]" LOC = P15;
-NET "DisplayData[1]" LOC = T11;
-NET "DisplayData[0]" LOC = L18;
+NET "DisplayData[6]" LOC = L3;
+NET "DisplayData[5]" LOC = N1;
+NET "DisplayData[4]" LOC = L5;
+NET "DisplayData[3]" LOC = L4;
+NET "DisplayData[2]" LOC = K3;
+NET "DisplayData[1]" LOC = M2;
+NET "DisplayData[0]" LOC = L6;
