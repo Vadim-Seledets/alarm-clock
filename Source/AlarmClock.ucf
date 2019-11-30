@@ -21,8 +21,6 @@ NET "EditEnable" IOSTANDARD = LVCMOS18;
 NET "Audio" IOSTANDARD = LVCMOS18;
 
 # DisplayControl
-NET "DisplayControl[7]" IOSTANDARD = LVCMOS18;
-NET "DisplayControl[6]" IOSTANDARD = LVCMOS18;
 NET "DisplayControl[5]" IOSTANDARD = LVCMOS18;
 NET "DisplayControl[4]" IOSTANDARD = LVCMOS18;
 NET "DisplayControl[3]" IOSTANDARD = LVCMOS18;
