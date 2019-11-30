@@ -36,6 +36,6 @@ begin
 		Hexadecimal => HoursConverted
 	);
 	
-	Hexadecimal <= HoursConverted & MinutesConverted & HoursConverted;
+	Hexadecimal <= HoursConverted & MinutesConverted & SecondsConverted;
 end Behavioral;
 
