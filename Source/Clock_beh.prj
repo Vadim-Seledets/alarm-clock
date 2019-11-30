@@ -1,5 +1,0 @@
-vhdl work "BCDToSevSegDecoder.vhd"
-vhdl work "SevSegDriver.vhd"
-vhdl work "FDIV.vhd"
-vhdl work "ClockFSM.vhd"
-vhdl work "Clock.vhd"

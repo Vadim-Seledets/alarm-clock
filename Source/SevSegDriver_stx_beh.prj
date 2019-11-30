@@ -1,2 +1,0 @@
-vhdl isim_temp "BCDToSevSegDecoder.vhd"
-vhdl isim_temp "SevSegDriver.vhd"

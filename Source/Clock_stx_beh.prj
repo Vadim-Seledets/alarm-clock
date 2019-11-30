@@ -1,5 +1,0 @@
-vhdl isim_temp "BCDToSevSegDecoder.vhd"
-vhdl isim_temp "SevSegDriver.vhd"
-vhdl isim_temp "FDIV.vhd"
-vhdl isim_temp "ClockFSM.vhd"
-vhdl isim_temp "Clock.vhd"

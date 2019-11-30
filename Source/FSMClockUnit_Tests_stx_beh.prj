@@ -1,4 +1,0 @@
-vhdl isim_temp "ClockController.vhd"
-vhdl isim_temp "AlarmController.vhd"
-vhdl isim_temp "FSMClockUnit.vhd"
-vhdl isim_temp "FSMClockUnit_Tests.vhd"

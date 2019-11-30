@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\nikol\Desktop\University\DigitalDesignSoftware\alarm-clock\Source\AudioDriver.ncd
-OUTFILE=C:\Users\nikol\Desktop\University\DigitalDesignSoftware\alarm-clock\Source\AudioDriver.bit
-FAMILY=Artix7
-PART=xc7a100t-3csg324
-WORKINGDIR=C:\Users\nikol\Desktop\University\DigitalDesignSoftware\alarm-clock\Source
-LICENSE=WebPack
-USER_INFO=__0_0_0
