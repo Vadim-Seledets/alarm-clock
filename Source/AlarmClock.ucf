@@ -1,0 +1,80 @@
+# PlanAhead Generated IO constraints 
+# -- Inputs
+
+# CLK
+NET "CLK" IOSTANDARD = LVCMOS18;
+
+# Buttons
+NET "Up" IOSTANDARD = LVCMOS18;
+NET "Down" IOSTANDARD = LVCMOS18;
+NET "Left" IOSTANDARD = LVCMOS18;
+NET "Right" IOSTANDARD = LVCMOS18;
+
+# Switch
+NET "Reset" IOSTANDARD = LVCMOS18;
+NET "TargetToSetTime" IOSTANDARD = LVCMOS18;
+NET "EditEnable" IOSTANDARD = LVCMOS18;
+
+# -- Outputs
+
+# Audio
+NET "Audio" IOSTANDARD = LVCMOS18;
+
+# DisplayControl
+NET "DisplayControl[7]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[6]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[5]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[4]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[3]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[2]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[1]" IOSTANDARD = LVCMOS18;
+NET "DisplayControl[0]" IOSTANDARD = LVCMOS18;
+
+# DisplayData
+NET "DisplayData[6]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[5]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[4]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[3]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[2]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[1]" IOSTANDARD = LVCMOS18;
+NET "DisplayData[0]" IOSTANDARD = LVCMOS18;
+
+# PlanAhead Generated physical constraints 
+
+# -- Inputs
+
+# CLK
+NET "CLK" LOC = E3;
+
+# Buttons
+NET "Up" LOC = M18;
+NET "Down" LOC = P18;
+NET "Left" LOC = P17;
+NET "Right" LOC = M17;
+
+# Switch
+NET "Reset" LOC = N17;
+NET "TargetToSetTime" LOC = J15;
+NET "EditEnable" LOC = L16;
+
+# -- Outputs
+
+# Audio
+NET "Audio" LOC = J8;
+
+# DisplayControl
+NET "DisplayControl[5]" LOC = U13;
+NET "DisplayControl[4]" LOC = K2;
+NET "DisplayControl[3]" LOC = T14;
+NET "DisplayControl[2]" LOC = P14;
+NET "DisplayControl[1]" LOC = J14;
+NET "DisplayControl[0]" LOC = T9;
+
+# DisplayData
+NET "DisplayData[6]" LOC = T10;
+NET "DisplayData[5]" LOC = R10;
+NET "DisplayData[4]" LOC = K16;
+NET "DisplayData[3]" LOC = K13;
+NET "DisplayData[2]" LOC = P15;
+NET "DisplayData[1]" LOC = T11;
+NET "DisplayData[0]" LOC = L18;

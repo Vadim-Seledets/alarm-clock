@@ -24,14 +24,9 @@ architecture Behavioral of InputDriver is
 	signal Seconds: std_logic_vector(7 downto 0) := (others => '0');
 	signal Minutes: std_logic_vector(7 downto 0) := (others => '0');
 	signal Hours: std_logic_vector(7 downto 0) := (others => '0');
-	
-	signal SecondsUpdated: std_logic_vector(7 downto 0) := (others => '0');
-	signal MinutesUpdated: std_logic_vector(7 downto 0) := (others => '0');
-	signal HoursUpdated: std_logic_vector(7 downto 0) := (others => '0');
-	
 begin
 	SelectPeriod: process (Left, Right)
-	variable TempPeriod : TSelectedPeriod := CurrentPeriod;
+		variable TempPeriod : TSelectedPeriod := CurrentPeriod;
 	begin
 		if Enable = '1' then
 			if rising_edge(Left) then
@@ -55,17 +50,26 @@ begin
 		end if;
 	end process;
 	
-	ChangeValue: process (Up, Down)
-		variable TMPSeconds : std_logic_vector(7 downto 0);
-		variable TMPMinutes : std_logic_vector(7 downto 0);
-		variable TMPHours : std_logic_vector(7 downto 0);
-	begin
-		if Enable = '1' then
+	ChangeValue: process (Enable, Up, Down)
+		variable TMPSeconds : std_logic_vector(7 downto 0) := (others => '0');
+		variable TMPMinutes : std_logic_vector(7 downto 0) := (others => '0');
+		variable TMPHours : std_logic_vector(7 downto 0) := (others => '0');
+		variable Inited : std_logic := '0';
+	begin	
+		Inited := '0';
+		if rising_edge(Enable) then
+			Seconds <= CurrentTime(7 downto 0);
+			Minutes <= CurrentTime(15 downto 8);
+			Hours <= CurrentTime(23 downto 16);
+			Inited := '1';
+		end if;
+		
+		if Enable = '1' and Inited = '0' then
 			TMPSeconds := Seconds;
 			TMPMinutes := Minutes;
 			TMPHours := Hours;
 			
-			if rising_edge(Up) then
+			if Up = '1' then
 				case CurrentPeriod is
 					when SecondsPeriod => TMPSeconds := TMPSeconds + 1;
 					when MinutesPeriod => TMPMinutes := TMPMinutes + 1;
@@ -74,7 +78,7 @@ begin
 				end case;	
 			end if;
 			
-			if rising_edge(Down) then
+			if Down = '1' then
 				case CurrentPeriod is
 					when SecondsPeriod => TMPSeconds := TMPSeconds - 1;
 					when MinutesPeriod => TMPMinutes := TMPMinutes - 1;
@@ -99,24 +103,11 @@ begin
 				TMPHours := (others => '0');
 			elsif TMPHours = "11111111" then 
 				TMPHours := "00010111";
-			end if;
+			end if;	
 			
-			SecondsUpdated <= TMPSeconds;
-			MinutesUpdated <= TMPMinutes;
-			HoursUpdated <= TMPHours;
-		end if;
-	end process;
-	
-	ChangeVassslue: process (Enable, SecondsUpdated, MinutesUpdated, HoursUpdated)
-	begin
-		if rising_edge(Enable) then
-			Seconds <= CurrentTime(7 downto 0);
-			Minutes <= CurrentTime(15 downto 8);
-			Hours <= CurrentTime(23 downto 16);
-		else
-			Seconds <= SecondsUpdated;
-			Minutes <= MinutesUpdated;
-			Hours <= HoursUpdated;
+			Seconds <= TMPSeconds;
+			Minutes <= TMPMinutes;
+			Hours <= TMPHours;
 		end if;
 	end process;
 	

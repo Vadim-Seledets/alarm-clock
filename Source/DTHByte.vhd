@@ -4,8 +4,10 @@ use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
 entity DTHByte is
-    Port ( Hec : in  STD_LOGIC_VECTOR (7 downto 0);
-           Hexadecimal : out  STD_LOGIC_VECTOR (7 downto 0));
+    Port ( 
+		Dec : in  STD_LOGIC_VECTOR (7 downto 0);
+      Hexadecimal : out  STD_LOGIC_VECTOR (7 downto 0)
+	);
 end DTHByte;
 
 architecture Behavioral of DTHByte is
@@ -28,12 +30,12 @@ architecture Behavioral of DTHByte is
 
 begin
 
-	IncrementSeconds: process (Hec)
+	IncrementSeconds: process (Dec)
 		variable tempStr : string(1 to 2) := "00";
 		variable digitFirst : std_logic_vector(3 downto 0):= "0000";
 		variable digitSecond : std_logic_vector(3 downto 0):= "0000";
 	begin
-		tempStr := cvString(conv_integer(Hec), 2);
+		tempStr := cvString(conv_integer(Dec), 2);
 		digitFirst := conv_std_logic_vector(character'pos(tempStr(1)), digitFirst'length);
 		digitSecond := conv_std_logic_vector(character'pos(tempStr(2)), digitSecond'length);
 		Hexadecimal <= digitFirst & digitSecond;

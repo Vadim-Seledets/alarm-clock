@@ -2,15 +2,17 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity DecToHexadecimal is
-    Port ( Hec : in  STD_LOGIC_VECTOR (23 downto 0);
-           Hexadecimal : out  STD_LOGIC_VECTOR (23 downto 0));
+	Port ( 
+		Dec : in  STD_LOGIC_VECTOR (23 downto 0);
+		Hexadecimal : out  STD_LOGIC_VECTOR (23 downto 0)
+	);
 end DecToHexadecimal;
 
 architecture Behavioral of DecToHexadecimal is
 
 	Component DTHByte is
 	Port (
-		Hec : in  std_logic_vector (7 downto 0);
+		Dec : in  std_logic_vector (7 downto 0);
 		Hexadecimal : out  std_logic_vector (7 downto 0)
 	);
 	end component;
@@ -20,17 +22,17 @@ architecture Behavioral of DecToHexadecimal is
 	signal HoursConverted: std_logic_vector(7 downto 0) := (others => '0');
 begin
 	SecondsConvert: DTHByte port map (
-		Hec => Hec(7 downto 0),
+		Dec => Dec(7 downto 0),
 		Hexadecimal => SecondsConverted
 	);
 	
 	MinutesConvert: DTHByte port map (
-		Hec => Hec(15 downto 8),
+		Dec => Dec(15 downto 8),
 		Hexadecimal => MinutesConverted
 	);
 	
 	HoursConvert: DTHByte port map (
-		Hec => Hec(23 downto 16),
+		Dec => Dec(23 downto 16),
 		Hexadecimal => HoursConverted
 	);
 	

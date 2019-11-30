@@ -13,36 +13,21 @@ entity ClockController is
 end ClockController;
 
 architecture Behavioral of ClockController is
-	type TClockMode is (RunningTime, SettingTime);
-	signal CurrentMode: TClockMode := RunningTime;
-	 
-	signal IncrementedSeconds: std_logic_vector(7 downto 0) := (others => '0');
-	
 	signal Seconds: std_logic_vector(7 downto 0) := (others => '0');
 	signal Minutes: std_logic_vector(7 downto 0) := (others => '0');
 	signal Hours: std_logic_vector(7 downto 0) := (others => '0');
 begin
-	IncrementSeconds: process (CLK)
-	begin
-		if rising_edge(CLK) and CurrentMode = RunningTime then
-			IncrementedSeconds <= Seconds + 1;
-		end if;
-	end process;
-	
-
-	Main: process (IncrementedSeconds, SetTime)
+	Main: process (CLK, SetTime)
 		variable TMPSeconds : std_logic_vector(7 downto 0);
 		variable TMPMinutes : std_logic_vector(7 downto 0);
 		variable TMPHours : std_logic_vector(7 downto 0);
 	begin
-		if rising_edge(SetTime) then
-			CurrentMode <= SettingTime;
+		if SetTime = '1' then
 			Seconds <= TimeIn(7 downto 0);
 			Minutes <= TimeIn(15 downto 8);
 			Hours <= TimeIn(23 downto 16);
-			CurrentMode <= RunningTime;
-		else
-			TMPSeconds := IncrementedSeconds;
+		elsif rising_edge(CLK) then
+			TMPSeconds := Seconds + 1;
 			TMPMinutes := Minutes;
 			TMPHours := Hours;
 			if TMPSeconds = "00111100" then
