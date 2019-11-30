@@ -29,7 +29,7 @@ begin
 
 	SetTimeAlarm: process (SetTime)
 	begin
-		if rising_edge(SetTime) then
+		if SetTime = '1' then
 			SavedAlarmTime <= AlarmTime;
 			SetedTime <= '1';
 		end if;
