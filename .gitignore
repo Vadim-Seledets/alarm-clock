@@ -42,6 +42,10 @@ xlnx_auto_0_xdb
 *.twx
 *.xmsgs
 *.exe
+*.xwbt
+*.debug
+*.wcfg
+*.tcl
 
 db
 incremental_db
@@ -51,7 +55,7 @@ isim
 vsim.wlf
 transcript
 impact.xsl
-impact_impact.xwbt
+
 _xmsgs/
 ipcore_dir
 iseconfig
