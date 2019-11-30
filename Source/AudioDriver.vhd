@@ -40,7 +40,7 @@ architecture Behavioral of AudioDriver is
 
 	subtype TPureTone is integer range 0 to 20000;
 	type TPureTones is array (0 to 7) of TPureTone;
-	subtype TTone is integer range 0 to 255; -- Max value is a value which we can store to a register
+	subtype TTone is integer range 0 to 255;
 	type TTones is array (0 to 7) of TTone;
 	type TToneName is (Do, Re, Mi, Fa, So, La, Si, TDo);
 	
@@ -89,7 +89,6 @@ architecture Behavioral of AudioDriver is
 	
 	signal s_is_loop_tone: std_logic := '0';
 	signal s_reset: std_logic := '0';
-	signal s_duration: integer := 4;
 	signal s_finished: std_logic := '0';
 begin
 	s_reset <= RST or s_is_loop_tone;
