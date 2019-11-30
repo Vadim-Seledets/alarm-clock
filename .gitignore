@@ -46,6 +46,8 @@ xlnx_auto_0_xdb
 *.debug
 *.wcfg
 *.tcl
+*.wdb
+*.ini
 
 db
 incremental_db
