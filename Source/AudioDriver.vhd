@@ -37,49 +37,6 @@ architecture Behavioral of AudioDriver is
 			Audio: out std_logic
 		);
 	end component;
-
-	subtype TPureTone is integer range 0 to 20000;
-	type TPureTones is array (0 to 7) of TPureTone;
-	subtype TTone is integer range 0 to 255;
-	type TTones is array (0 to 7) of TTone;
-	type TToneName is (Do, Re, Mi, Fa, So, La, Si, TDo);
-	
-	function ToneNameToInteger(tone_name: IN TToneName) return integer is
-		variable result: integer range 0 to 7 := 1;
-	begin
-		if tone_name = Do then
-			result := 0;
-		elsif tone_name = Re then
-			result := 1;
-		elsif tone_name = Mi then
-			result := 2;
-		elsif tone_name = Fa then
-			result := 3;
-		elsif tone_name = So then
-			result := 4;
-		elsif tone_name = La then
-			result := 5;
-		elsif tone_name = Si then
-			result := 6;
-		elsif tone_name = TDo then
-			result := 7;
-		end if;
-		return result;
-	end function;
-	
-	constant pwm_frequency: integer := 10000000;
-	constant N: integer := 128;
-	constant PureTones: TPureTones := (523, 587, 659, 698, 784, 880, 988, 1047);
-	constant Tones: TTones := (
-		pwm_frequency / PureTones(0) / N, -- Do
-		pwm_frequency / PureTones(1) / N, -- Re
-		pwm_frequency / PureTones(2) / N, -- Mi
-		pwm_frequency / PureTones(3) / N, -- Fa
-		pwm_frequency / PureTones(4) / N, -- So
-		pwm_frequency / PureTones(5) / N, -- La
-		pwm_frequency / PureTones(6) / N, -- Si
-		pwm_frequency / PureTones(7) / N  -- TDo
-	);
 	
 	signal s_tone: integer range 0 to 255 := 0;
 	
