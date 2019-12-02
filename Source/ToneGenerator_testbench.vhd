@@ -2,10 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+use Work.AudioDriverTypes.all;
  
 ENTITY ToneGenerator_testbench IS
 END ToneGenerator_testbench;
@@ -16,8 +13,9 @@ ARCHITECTURE behavior OF ToneGenerator_testbench IS
  
     COMPONENT ToneGenerator
     PORT(
-         Tone: in integer range 0 to 255;
-			Duration: in integer;
+         Tone: in TTone;
+			Duration: in TDuration;
+			Load: in std_logic;
 			Enable : IN std_logic;
          CLK : IN  std_logic;
          RST : IN  std_logic;
@@ -28,8 +26,9 @@ ARCHITECTURE behavior OF ToneGenerator_testbench IS
     
 
    --Inputs
-   signal Tone: integer range 0 to 255 := 0;
-	signal Duration: integer := 0;
+   signal Tone: TTone;
+	signal Duration: TDuration;
+	signal Load: std_logic := '0';
 	signal Enable : std_logic := '0';
    signal CLK : std_logic := '0';
    signal RST : std_logic := '0';
@@ -47,6 +46,7 @@ BEGIN
    uut: ToneGenerator PORT MAP (
           Tone => Tone,
           Duration => Duration, --ms
+			 Load => Load,
 			 Enable => Enable,
           CLK => CLK,
           RST => RST,
@@ -73,11 +73,13 @@ BEGIN
       wait for CLK_period*10;
 
       Tone <= 74;
-		Duration <= 3;
-		Enable <= '1';
+		Duration <= 100;
+		wait for 100 ns;
 		
-		Tone <= 200;
-		Duration <= 6;
+		Load <= '1';
+		wait for 20 ns;
+		Load <= '0';
+		Enable <= '1';
 		
       wait;
    end process;
