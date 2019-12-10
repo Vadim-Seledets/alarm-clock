@@ -4,17 +4,16 @@ use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use Work.AudioDriverTypes.all;
  
-ENTITY ToneGenerator_testbench IS
-END ToneGenerator_testbench;
+ENTITY SoundGenerator_testbench IS
+END SoundGenerator_testbench;
  
-ARCHITECTURE behavior OF ToneGenerator_testbench IS 
+ARCHITECTURE behavior OF SoundGenerator_testbench IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT ToneGenerator
+    COMPONENT SoundGenerator
     PORT(
-         Tone: in TTone;
-			Duration: in TDuration;
+         Sound: TSound;
 			Load: in std_logic;
 			Enable : IN std_logic;
          CLK : IN  std_logic;
@@ -26,8 +25,7 @@ ARCHITECTURE behavior OF ToneGenerator_testbench IS
     
 
    --Inputs
-   signal Tone: TTone;
-	signal Duration: TDuration;
+   signal Sound: TSound;
 	signal Load: std_logic := '0';
 	signal Enable : std_logic := '0';
    signal CLK : std_logic := '0';
@@ -43,9 +41,8 @@ ARCHITECTURE behavior OF ToneGenerator_testbench IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: ToneGenerator PORT MAP (
-          Tone => Tone,
-          Duration => Duration, --ms
+   uut: SoundGenerator PORT MAP (
+          Sound => Sound,
 			 Load => Load,
 			 Enable => Enable,
           CLK => CLK,
@@ -72,8 +69,8 @@ BEGIN
 		RST <= '0';
       wait for CLK_period*10;
 
-      Tone <= 74;
-		Duration <= 100;
+      Sound.Tone <= 74;
+		Sound.Duration <= 100;
 		wait for 100 ns;
 		
 		Load <= '1';

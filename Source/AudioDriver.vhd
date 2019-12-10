@@ -26,7 +26,7 @@ architecture Behavioral of AudioDriver is
 		);
 	end component;
 	
-	component ToneGenerator is 		
+	component SoundGenerator is 		
 		port (
 			Tone: in integer range 0 to 255;
 			Duration: in integer;
@@ -53,7 +53,7 @@ begin
 	
 	ROM_WITH_MELODY: ROM_Melody port map (s_address, s_data);
 	
-	TONE_GENERATOR: ToneGenerator port map (
+	SOUND_GENERATOR: SoundGenerator port map (
 		Tone => s_tone,
 		Duration => conv_integer(s_data(3 downto 0)),
 		Enable => PlayEnable,

@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.MATH_REAL.ALL;
 use Work.AudioDriverTypes.all;
 
-entity ToneGenerator is
+entity SoundGenerator is
 	port (
 		Sound: in TSound;
 		Load: in std_logic;
@@ -15,9 +15,9 @@ entity ToneGenerator is
 		Finished: out std_logic;
 		Audio: out std_logic
 	);
-end ToneGenerator;
+end SoundGenerator;
 
-architecture Behavioral of ToneGenerator is
+architecture Behavioral of SoundGenerator is
 
 	component FDIV is
 		generic (
