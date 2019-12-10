@@ -10,7 +10,7 @@ package AudioDriverTypes is
 	subtype TToneIndex is integer range 0 to 7; 
 	subtype TDuration is integer range 0 to 1000;
 	
-	type Sound is
+	type TSound is
 	record
 		Tone: TTone;
 		Duration: TDuration;

@@ -7,8 +7,7 @@ use Work.AudioDriverTypes.all;
 
 entity ToneGenerator is
 	port (
-		Tone: in TTone;
-		Duration: in TDuration;
+		Sound: in TSound;
 		Load: in std_logic;
 		Enable: in std_logic;
 		CLK: in std_logic;
@@ -110,15 +109,15 @@ begin
 		PWM_SIGNAL => s_audio
 	);
 	
-	LoadSound: process(CLK, RST, LOAD, Tone, Duration)
+	LoadSound: process(CLK, RST, LOAD, Sound)
 	begin
 		if RST = '1' then
 			s_tone_slv <= (others => '0');
 			s_duration_slv <= (others => '0');
 		elsif LOAD = '1' then
 			if rising_edge(CLK) then
-				s_tone_slv <= conv_std_logic_vector(Tone, TONE_SLV_SIZE);
-				s_duration_slv <= conv_std_logic_vector(Duration, DURATION_SLV_SIZE);
+				s_tone_slv <= conv_std_logic_vector(Sound.Tone, TONE_SLV_SIZE);
+				s_duration_slv <= conv_std_logic_vector(Sound.Duration, DURATION_SLV_SIZE);
 			end if;
 		end if;
 	end process;
