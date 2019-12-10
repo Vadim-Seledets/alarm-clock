@@ -17,14 +17,13 @@ end FrequencyDivider;
 
 architecture Behavioral of FrequencyDivider is
 	signal s_counter: std_logic_vector(2**n - 1 downto 0);
---	signal s_flipflop: std_logic;
 begin
 	Count: process(CLK, RST, CE)
 	begin
 		if RST = '1' then
 			s_counter <= (others => '0');
 		elsif CE = '1' then
-			if falling_edge(CLK) then
+			if rising_edge(CLK) then
 				s_counter <= s_counter + 1;
 			end if;
 		end if;
